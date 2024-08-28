@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="newChatBot.css">
+</head>
+<body>
+    <button class="chatbtn" onclick="toggleChatPopup()">💬</button>
+    <div class="chat-popup" id="chat-popup">
+        <div class="input-container">
+            <div class="search-bar-container">
+                <input type="text" id="search-bar" placeholder="Search..." oninput="highlightText()">
+                <button id="search-bar-clear" class="clear-btn" onclick="clearSearch()">&#10005;</button>
+            </div>
+            <button id="dropup" onclick="navigateHighlight(-1)">&#9650;</button>
+            <button id="dropdown" onclick="navigateHighlight(1)">&#9660;</button>
+        </div>
+        <div class="chat-window" id="chat-window"></div>
+        <div class="input-container">
+            <button id="voice-record-btn">🎤</button>
+            <input type="text" id="user-input" placeholder="Enter your text">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="voice-message-container" id="voice-message-container" style="display: none;">
+            <div class="waveform" id="waveform"></div>
+            <div class="voice-controls">
+                <button id="send-voice-message">Send</button>
+                <button id="delete-voice-message">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="newChatBot.js"></script>
+</body>
+</html>
